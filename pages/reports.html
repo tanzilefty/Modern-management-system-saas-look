@@ -1,0 +1,32 @@
+<div class="module-container">
+    <div class="module-header">
+        <div>
+            <h2>Institutional Reports</h2>
+            <p>Visual analytics and data distribution across departments.</p>
+        </div>
+        <button class="btn-secondary" onclick="ReportModule.exportCSV()">📥 Export Student CSV</button>
+    </div>
+
+    <div class="reports-grid">
+        <div class="card chart-card">
+            <h3>Grade Distribution</h3>
+            <div class="canvas-container">
+                <canvas id="gradeDistributionChart" width="400" height="250"></canvas>
+            </div>
+            <div id="gradeLegend" class="legend"></div>
+        </div>
+
+        <div class="card chart-card">
+            <h3>Weekly Attendance Trend (%)</h3>
+            <div class="canvas-container">
+                <canvas id="attendanceTrendChart" width="400" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="card activity-log-card" style="margin-top: 24px;">
+        <h3>System Activity Log</h3>
+        <div class="log-container" id="systemLogs">
+            </div>
+    </div>
+</div>

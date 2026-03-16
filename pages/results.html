@@ -1,0 +1,44 @@
+<div class="module-container">
+    <div class="module-header">
+        <div>
+            <h2>Grade Management</h2>
+            <p>Input student marks and generate automated transcripts.</p>
+        </div>
+    </div>
+
+    <div class="result-entry-card card">
+        <h3>Enter Student Marks</h3>
+        <form id="resultForm" class="form-row" style="display: flex; gap: 15px; align-items: flex-end; margin-top: 15px;">
+            <div class="form-group" style="flex: 2;">
+                <label>Select Student</label>
+                <select id="resStudentSelect"></select>
+            </div>
+            <div class="form-group" style="flex: 2;">
+                <label>Course</label>
+                <select id="resCourseSelect"></select>
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label>Marks (0-100)</label>
+                <input type="number" id="resMarks" min="0" max="100" required>
+            </div>
+            <button type="submit" class="btn-primary" style="height: 42px;">Post Grade</button>
+        </form>
+    </div>
+
+    <div class="table-wrapper" style="margin-top: 30px;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Course</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                    <th>GPA Point</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="resultTableBody">
+                </tbody>
+        </table>
+    </div>
+</div>

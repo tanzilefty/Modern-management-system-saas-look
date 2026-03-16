@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SIMS Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f4f6;
+            margin: 0;
+        }
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .login-header h2 {
+            font-size: 1.8rem;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        .login-header p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s, ring 0.2s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        .btn-login {
+            width: 100%;
+            background: #6366f1;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-login:hover {
+            background: #4f46e5;
+        }
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: none;
+            text-align: center;
+        }
+        .footer-links {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        .footer-links a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">🎓</div>
+            <h2>Welcome Back</h2>
+            <p>Please enter your details to sign in</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="admin@sims.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Sign in as</label>
+                <select id="role">
+                    <option value="admin">Administrator</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn-login">Sign In</button>
+            <div id="errorBox" class="error-msg">Invalid email or password.</div>
+        </form>
+
+        <div class="footer-links">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            const errorBox = document.getElementById('errorBox');
+
+            // Simple demo validation logic
+            // In a real app, this would be an API call
+            if (email && password.length >= 4) {
+                const userSession = {
+                    email: email,
+                    role: role,
+                    name: role.charAt(0).toUpperCase() + role.slice(1),
+                    isLoggedIn: true,
+                    lastLogin: new Date().toISOString()
+                };
+
+                localStorage.setItem('sims_session', JSON.stringify(userSession));
+                window.location.href = 'dashboard.html';
+            } else {
+                errorBox.style.display = 'block';
+            }
+        });
+
+        // Redirect if already logged in
+        if (localStorage.getItem('sims_session')) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

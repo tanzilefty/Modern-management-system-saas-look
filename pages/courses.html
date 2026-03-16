@@ -1,0 +1,46 @@
+<div class="module-container">
+    <div class="module-header">
+        <div>
+            <h2>Course Catalog</h2>
+            <p>Manage academic programs and faculty assignments.</p>
+        </div>
+        <button class="btn-primary" onclick="CourseModule.openModal()">+ Create New Course</button>
+    </div>
+
+    <div class="course-grid" id="courseGrid">
+        </div>
+</div>
+
+<div id="courseModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Course Details</h3>
+            <span class="close" onclick="CourseModule.closeModal()">&times;</span>
+        </div>
+        <form id="courseForm">
+            <div class="form-group">
+                <label>Course Name</label>
+                <input type="text" id="cName" placeholder="e.g. Artificial Intelligence" required>
+            </div>
+            <div class="form-row" style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label>Course Code</label>
+                    <input type="text" id="cCode" placeholder="CS302" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Credits</label>
+                    <input type="number" id="cCredits" value="3" min="1" max="5">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Assigned Teacher</label>
+                <select id="cTeacher">
+                    <option value="Dr. Aris Thorne">Dr. Aris Thorne</option>
+                    <option value="Prof. Sarah Jenkins">Prof. Sarah Jenkins</option>
+                    <option value="Dr. Michael Vane">Dr. Michael Vane</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 15px;">Publish Course</button>
+        </form>
+    </div>
+</div>

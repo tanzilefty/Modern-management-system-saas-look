@@ -1,0 +1,27 @@
+{
+  "students": [
+    { "id": "2024001", "name": "Marcus Aurelius", "email": "marcus@univ.edu", "dept": "CS", "gpa": 3.9, "attendance": 98 },
+    { "id": "2024002", "name": "Ada Lovelace", "email": "ada@univ.edu", "dept": "CS", "gpa": 4.0, "attendance": 100 },
+    { "id": "2024003", "name": "Nikola Tesla", "email": "nikola@univ.edu", "dept": "Physics", "gpa": 3.7, "attendance": 85 },
+    { "id": "2024004", "name": "Grace Hopper", "email": "grace@univ.edu", "dept": "CS", "gpa": 3.8, "attendance": 92 },
+    { "id": "2024005", "name": "Isaac Newton", "email": "isaac@univ.edu", "dept": "Math", "gpa": 3.6, "attendance": 75 }
+  ],
+  "teachers": [
+    { "id": "T01", "name": "Dr. Aris Thorne", "dept": "CS", "courses": ["CS101", "CS302"] },
+    { "id": "T02", "name": "Prof. Sarah Jenkins", "dept": "Math", "courses": ["MTH201"] }
+  ],
+  "courses": [
+    { "id": "C1", "name": "Data Structures", "code": "CS101", "teacher": "Dr. Aris Thorne", "credits": 4 },
+    { "id": "C2", "name": "Linear Algebra", "code": "MTH201", "teacher": "Prof. Sarah Jenkins", "credits": 3 },
+    { "id": "C3", "name": "Quantum Mechanics", "code": "PHY305", "teacher": "Dr. Michael Vane", "credits": 4 }
+  ],
+  "attendance": [],
+  "results": [
+    { "studentId": "2024001", "courseId": "C1", "marks": 88 },
+    { "studentId": "2024002", "courseId": "C1", "marks": 95 }
+  ],
+  "logs": [
+    { "time": "2026-03-16T10:00:00Z", "msg": "System deployment successful" },
+    { "time": "2026-03-16T11:30:00Z", "msg": "New student batch imported" }
+  ]
+}

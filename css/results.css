@@ -1,0 +1,19 @@
+.grade-pill {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.A\+ { background: #dcfce7; color: #15803d; }
+.A { background: #dcfce7; color: #15803d; }
+.B { background: #e0e7ff; color: #4338ca; }
+.C { background: #fef3c7; color: #b45309; }
+.F { background: #fee2e2; color: #b91c1c; }
+
+.result-entry-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}

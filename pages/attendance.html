@@ -1,0 +1,43 @@
+<div class="module-container">
+    <div class="module-header">
+        <div>
+            <h2>Attendance Tracker</h2>
+            <p>Select a course and date to record student presence.</p>
+        </div>
+        <div class="header-actions">
+            <button class="btn-primary" onclick="AttendanceModule.saveBatch()">Save Attendance</button>
+        </div>
+    </div>
+
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>Course</label>
+            <select id="attnCourseSelect" onchange="AttendanceModule.loadStudents()">
+                </select>
+        </div>
+        <div class="filter-group">
+            <label>Date</label>
+            <input type="date" id="attnDate" onchange="AttendanceModule.loadStudents()">
+        </div>
+    </div>
+
+    <div class="attendance-list-wrapper">
+        <div class="attendance-stats">
+            <div class="stat-mini">Total: <span id="countTotal">0</span></div>
+            <div class="stat-mini success">Present: <span id="countPresent">0</span></div>
+            <div class="stat-mini danger">Absent: <span id="countAbsent">0</span></div>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Action</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+                </tbody>
+        </table>
+    </div>
+</div>

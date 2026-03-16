@@ -1,0 +1,56 @@
+.filter-bar {
+    display: flex;
+    gap: 20px;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.filter-group { display: flex; flex-direction: column; gap: 8px; }
+.filter-group label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.status-badge.present { background: #dcfce7; color: #15803d; }
+.status-badge.absent { background: #fee2e2; color: #b91c1c; }
+
+.toggle-group {
+    display: inline-flex;
+    background: var(--bg-main);
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.btn-toggle {
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: transparent;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.btn-toggle.active {
+    background: var(--bg-card);
+    color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.attendance-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.stat-mini {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.stat-mini.success span { color: var(--success); }
+.stat-mini.danger span { color: var(--danger); }
